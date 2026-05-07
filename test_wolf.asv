@@ -1,0 +1,17 @@
+%≤‚ ‘lyapunov_wolf∑®
+clear
+global delt r b; 
+delt=10;
+b=8/3;
+lya_pu=[];
+sup_delt=1e-5;
+
+
+lya_pu=[];
+r=24;
+tic
+x0=1;y0=1;z0=1;
+sim('lorenz_sim.mdl',50)
+data=x(3000:end);
+lya=lyapunov(data,length(data),3,12,40)
+toc
